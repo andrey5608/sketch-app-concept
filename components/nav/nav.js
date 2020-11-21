@@ -1,7 +1,7 @@
 import React from "react";
 import {
   withNavigationContext,
-  Link
+  Link,
 } from "react-awesome-slider/dist/navigation";
 import ReactLogo from "../react-logo/react-logo";
 import "./nav.scss";
@@ -20,26 +20,30 @@ const Nav = withNavigationContext(({ fullpage }) => {
               <span>Slideshow</span>
             </h1>
             <h2>Let me show you something</h2>
-            <small>
-              {`<3`}
-            </small>
+            <small>{`<3`}</small>
           </div>
         </div>
         <nav>
           <Link className={slug === "" ? "selected" : null} href="/">
-            index
+            Главная
           </Link>
           <Link
             className={slug === "page-two" ? "selected" : null}
             href="/page-two"
           >
-            page 2
+            Утро
           </Link>
           <Link
             className={slug === "page-three" ? "selected" : null}
             href="/page-three"
           >
-            page 3
+            Озеро
+          </Link>
+          <Link
+            className={slug === "page-four" ? "selected" : null}
+            href="/page-four"
+          >
+            Возвращение
           </Link>
         </nav>
       </div>

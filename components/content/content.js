@@ -1,6 +1,5 @@
 import React from "react";
 import { withNavigationContext } from "react-awesome-slider/dist/navigation";
-import Select from "../select/select";
 import "./content.scss";
 
 const options = [

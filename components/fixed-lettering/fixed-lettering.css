@@ -1,0 +1,24 @@
+.fixed-lettering {
+  color: #fff;
+  font-family: monospace;
+  text-align: center;
+  background-color: black;
+  border-radius: 70px !important;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  max-width: 40%;
+}
+
+.fixed-lettering h1 {
+  font-size: small;
+  line-height: 40px;
+  margin-bottom: 24px;
+}
+
+.fixed-lettering p {
+  font-size: smaller;
+  line-height: 24px;
+  margin-bottom: 8px;
+}

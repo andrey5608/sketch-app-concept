@@ -1,0 +1,17 @@
+.scroll-fixed-lettering{
+    left: unset !important;
+    right: unset !important;
+    margin-left: auto;
+    margin-right: auto;
+    color: royalblue;
+    font-size: xx-large;
+    border: solid;
+    text-transform: uppercase;
+  }
+
+  .scroll-fixed {
+    left: unset !important;
+    right: unset !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
