@@ -8,7 +8,7 @@ const Mouse = ({ visible = true }) => {
     className.push('hidden');
   }
   return (
-    <div class="lettering scroll-fixed-lettering">
+    <div className="lettering scroll-fixed-lettering">
       Scroll down!
       <button className={className.join(' ').trim()} title="Choose Wisely">
         <span />

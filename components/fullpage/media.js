@@ -18,7 +18,7 @@ export const Home = withNavigationContext(({ fullpage }) => {
           <Lettering
             title="Привет"
             text={[
-              "Это небольшая подборка историй с иллюстрациями от @vallogika",
+              "Это небольшая подборка историй с иллюстрациями от @vallogika"
             ]}
           />
         }
@@ -30,7 +30,7 @@ export const Home = withNavigationContext(({ fullpage }) => {
                 fullpage.navigate("/page-two");
               }}
             >
-              Goto the next page
+              На следующую страницу
             </AwesomeButton>
           </div>
         }
@@ -42,25 +42,13 @@ export const Home = withNavigationContext(({ fullpage }) => {
 export const Third = withNavigationContext(({ fullpage }) => {
   return (
     <Section wrapper={false} backgroundColor="#ff6f5e">
-      <Background src="/static/bojack.png" />
+      <Background src="/static/Озер_пнг.png" />
       <Content
         main={
           <Lettering
-            title="PAGE 3"
-            text={["This is a screen with preloaded background image."]}
+            title="Озеро"
+            text={["бла-бла-бла"]}
           />
-        }
-        action={
-          <div className="button">
-            <AwesomeButton
-              size="large"
-              onPress={() => {
-                fullpage.navigate("/page-two");
-              }}
-            >
-              Goto the prev page
-            </AwesomeButton>
-          </div>
         }
       />
     </Section>
@@ -83,41 +71,77 @@ const firstText = [
     "Она поражалась, насколько нужно быть сильным, чтобы вывезти такую тяжелую судьбу и таких разноперых сложных друзей🐴",
 ];
 
-export const media = [
-  {
-    slug: "",
-    className: "slide page-one",
-    children: <Home />,
-  },
-  {
-    slug: "page-two",
-    className: "page-two",
-    preload: ["/static/Утро_пнг.png"],
-    children: (
-      <Page>
-        <Section wrapper={false}>
-          <Background src="/static/Утро_пнг.png" />
-          <Content
-            main={
-              <FixedLettering
-                title="История 1. Утро."
-                text={firstText}
-              />
-            }
-          />
-        </Section>
-        <Section backgroundColor="#617be3">
-          <Lettering
-            text={firstText}
-          />
-        </Section>
-      </Page>
-    ),
-  },
-  {
-    slug: "page-three",
-    preload: ["/static/bojack.png"],
-    className: "slide page-three",
-    children: <Third />,
-  },
-];
+export const media = (shouldUseExtendedVersion) =>{
+
+  console.log(shouldUseExtendedVersion)
+
+  return [
+    {
+      slug: "",
+      className: "slide page-one",
+      children: <Home />,
+    },
+    {
+      slug: "page-two",
+      className: "page-two",
+      preload: ["/static/Утро_пнг.png"],
+      children: (
+        <Page>
+          <Section wrapper={false}>
+            <Background src="/static/Утро_пнг.png" />
+            <Content
+              main={!shouldUseExtendedVersion ? 
+                <FixedLettering
+                  title="История 1. Утро."
+                  text={firstText}
+                /> : null
+              }
+            />
+          </Section>
+          {shouldUseExtendedVersion ? <div className="gtfo-div">
+          <Section wrapper={false} backgroundColor="#617be3">
+            <Lettering
+              text={firstText}
+            />
+          </Section>
+          </div> : null}
+          
+        </Page>
+      ),
+    },
+    {
+      slug: "page-three",
+      preload: ["/static/Озер_пнг.png"],
+      className: "slide page-three",
+      children: <Third />,
+    },
+    {
+      slug: "page-four",
+      className: "page-four",
+      preload: ["/static/Возвращение_пнг.png"],
+      children: (
+        <Page>
+          <Section wrapper={false}>
+            <Background src="/static/Возвращение_пнг.png" />
+            <Content
+              main={!shouldUseExtendedVersion ? 
+                <FixedLettering
+                  title="История 3. Возвращение."
+                  text={["бла-бла-бла"]}
+                /> : null
+              }
+            />
+          </Section>
+          {shouldUseExtendedVersion ? <div className="gtfo-div">
+          <Section wrapper={false} backgroundColor="#617be3">
+            <Lettering
+              text={["бла-бла-бла"]}
+            />
+          </Section>
+          </div> : null}
+          
+        </Page>
+      ),
+    },
+  ];
+} 

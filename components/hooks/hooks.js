@@ -18,7 +18,7 @@ function getWindowDimensions() {
   }
 }
 
-export default function useWindowDimensions() {
+export function useWindowDimensions() {
   if (typeof window !== "undefined") {
     const [windowDimensions, setWindowDimensions] = useState(
       getWindowDimensions()
@@ -36,4 +36,15 @@ export default function useWindowDimensions() {
   } else {
     return undefined;
   }
+}
+
+export default function shouldUseExtendedSection() {
+    if (useWindowDimensions() !== undefined) {
+        const { height, width } = useWindowDimensions();
+        console.log(height);
+        console.log(width);
+        console.log((width <= 1100 || height <= 500));
+        return (width <= 1100 || height <= 500);
+      }
+      return false;
 }

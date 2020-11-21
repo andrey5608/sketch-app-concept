@@ -11,8 +11,10 @@ import {
 } from "react-awesome-slider/dist/navigation";
 import { media } from "./media";
 import Startup from "../startup/startup";
+import shouldUseExtendedSection from "../hooks/hooks";
 
 const Slider = withNavigationHandlers(AwesomeSlider);
+
 
 export default withNavigationContext(({ fullpage }) => {
   const isFirstLoad = useRef(true);
@@ -24,6 +26,7 @@ export default withNavigationContext(({ fullpage }) => {
       startupDelay={275}
       animation={animation}
       className="awesome-slider"
+      infinite={false}
       onTransitionEnd={() => {
         // HANDLE THE PAGE ELEMENTS ANIMATION ON FIRST TRANSITION END
         if (isFirstLoad.current === true) {
@@ -31,7 +34,7 @@ export default withNavigationContext(({ fullpage }) => {
           document.querySelector("body").classList.add("visible");
         }
       }}
-      media={media}
+      media={media(shouldUseExtendedSection())}
     />
   );
 });
