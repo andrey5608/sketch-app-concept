@@ -92,6 +92,7 @@ export const media = [
   {
     slug: "page-two",
     className: "page-two",
+    preload: ["/static/Утро_пнг.png"],
     children: (
       <Page>
         <Section wrapper={false}>
